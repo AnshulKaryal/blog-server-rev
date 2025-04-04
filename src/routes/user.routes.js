@@ -1,7 +1,7 @@
 import { Router } from 'express'
 const router = Router()
 
-import * as UsersController from '../controllers/user.controller.js'
+import * as UsersController from '../controllers/user.Controller.js'
 import UserAuth from '../middleware/user.Auth.js';
 
 // POST ROUTES
