@@ -121,7 +121,7 @@ export async function getAllBlogs(req, res) {
 
 export async function getUserBlog(req, res) {
     try {
-        const { userId } = req.params;
+        const userId = req.params?.userId || req.user?.userId;
         const page = parseInt(req.query.page) || 1;
         const limit = 10;
         const skip = (page - 1) * limit;

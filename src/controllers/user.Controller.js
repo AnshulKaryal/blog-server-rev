@@ -29,10 +29,12 @@ export async function registerUser(req, res) {
         });
 
         await user.save();
+        const token = user.generateAuthToken();
+
         return res.status(201).send({
             success: true,
             message: "New User Created",
-            user,
+            token,
         });
     } catch (error) {
         console.error(error);
@@ -72,7 +74,6 @@ export async function loginUser(req, res) {
         return res.status(200).send({
             success: true,
             messgae: "login successfully",
-            user,
             token,
         });
     } catch (error) {
