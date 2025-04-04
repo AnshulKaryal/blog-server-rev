@@ -65,7 +65,7 @@ app.get("/", ServerStatus.getServerLoadInfo, (req, res) => {
     const serverLoadInfo = req.serverLoadInfo;
     res.status(200).send({
         success: true,
-        message: "Coreshield Assignment Backend!",
+        message: "Assignment Backend!",
         dateTime: new Date().toLocaleString(),
         connectedClient: process.env.CLIENT_BASE_URL,
         systemStatus: {
